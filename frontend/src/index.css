@@ -9,15 +9,7 @@ body {
 .site-container {
   min-height: 100vh;
 }
-header{
-  background-color: #404040;
-  padding: 1rem;
-}
-header a {
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
-}
+
 main {
   flex: 1;
 }

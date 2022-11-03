@@ -2,7 +2,6 @@ import React, { useState, useEffect, useReducer } from 'react';
 import { Link } from 'react-router-dom';
 //import data from '../data'
 import axios from 'axios'
-import logger from 'use-reducer-logger'
 
 const reducer = (state, action) => {
 	switch ((action.type)) {
@@ -18,7 +17,7 @@ const reducer = (state, action) => {
 };
 
 function HomeScreen() {
-const [{loading, error, products}, dispatch]=useReducer(logger(reducer),{
+const [{loading, error, products}, dispatch]=useReducer(reducer,{
   products:[],
   loading:true,
   error:'',
@@ -54,7 +53,7 @@ const [{loading, error, products}, dispatch]=useReducer(logger(reducer),{
 								<p>{product.name}</p>
 							</Link>
 							<p>{product.price}</p>
-							<button>Add to cart</button>
+							<button>Add to cart 🛒</button>
 						</div>
 					</div>
 				))}
