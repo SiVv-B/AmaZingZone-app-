@@ -3,6 +3,7 @@ import React, { useState, useEffect, useReducer } from 'react'
 import axios from 'axios'
 import {Row,Col} from 'react-bootstrap'
 import Product from '../components/Product'
+import { Helmet } from 'react-helmet-async'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -37,6 +38,11 @@ function HomeScreen() {
   }, [])
   return (
     <div>
+      <Helmet>
+        <title>
+        ✨AmazonSiv✨
+        </title>
+      </Helmet>
       <h1>List of products</h1>
       <div className="products">
         {loading ? (

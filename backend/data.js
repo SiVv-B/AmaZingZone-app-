@@ -9,7 +9,7 @@ const data = {
         countInStock: 10,
         brand: 'Nike',
         rating: 4.5,
-        numReviews: 10,
+        numReviews: 0,
         description: 'high quality shirt',
       },
       {
@@ -42,7 +42,7 @@ const data = {
         category: 'Pants',
         image: '/images/p4.jpg',
         price: 65,
-        countInStock: 5,
+        countInStock: 0,
         brand: 'Puma',
         rating: 4.5,
         numReviews: 10,
