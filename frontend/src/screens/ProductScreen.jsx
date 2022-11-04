@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useReducer } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import {
   Badge,
   Button,
@@ -51,14 +51,23 @@ function ProductScreen() {
     fetchData()
   }, [slug])
 
-const {state, dispatch: ctxDispatch} = useContext(Store)
-
-const addToCartHandler=()=>{
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart, userInfo } = state;
+const addToCartHandler = async () => {
+  const existItem = cart.cartItems.find((x) => x._id === product._id);
+  const quantity = existItem ? existItem.quantity + 1 : 1;
+  const { data } = await axios.get(`/api/products/${product._id}`);
+  if (data.countInStock < quantity) {
+    window.alert('Sorry. Product is out of stock');
+    return;
+  }
   ctxDispatch({
-    type: "CART_ADD_ITEM",
-    payload: { ...product, quantity:1 },
+    type: 'CART_ADD_ITEM',
+    payload: { ...product, quantity }
   });
-}
+  //Navigate('/cart');
+};
+
 
 
   return loading ? (
