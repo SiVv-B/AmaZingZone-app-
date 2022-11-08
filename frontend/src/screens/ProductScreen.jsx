@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useReducer } from 'react'
 import axios from 'axios'
-import {  useNavigate, useParams } from 'react-router-dom'
+import {   useParams } from 'react-router-dom'
 import {
   Badge,
   Button,
@@ -31,7 +31,6 @@ const reducer = (state, action) => {
 }
 
 function ProductScreen() {
-  const navigate = useNavigate()
   const params = useParams()
   const { slug } = params
   const [{ loading, error, product }, dispatch] = useReducer(reducer, {
