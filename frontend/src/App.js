@@ -12,9 +12,8 @@ import CartScreen from './screens/CartScreen'
 import SigninScreen from './screens/SignInScreen'
 
 function App() {
-  
-const {state} = useContext(Store)
-const {cart} = state
+  const { state } = useContext(Store)
+  const { cart } = state
   return (
     <div className="d-flex flex-column site-container">
       <BrowserRouter>
@@ -26,12 +25,10 @@ const {cart} = state
               </LinkContainer>
               <Nav className="me-auto">
                 <Link to="/cart" className="nav-link">
-                🛒Cart
+                  🛒Cart
                   {cart.cartItems.length > 0 && (
                     <Badge pill bg="danger">
-                      {cart.cartItems.reduce((a,c)=>a + c.quantity, 0)}
-
-                     
+                      {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                     </Badge>
                   )}
                 </Link>
@@ -46,7 +43,6 @@ const {cart} = state
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
-
             </Routes>
           </Container>
         </main>
