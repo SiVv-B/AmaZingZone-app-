@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "cd backend && nodemon server.js",
+    "server": "cd backend && npm start",
     "frontend": "cd frontend && npm start",
     "start": "concurrently \"npm run server\" \"npm run frontend\""
   },
