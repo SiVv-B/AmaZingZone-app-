@@ -2,7 +2,7 @@
   "name": "amazingzone",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "node server.js",
   "scripts": {
     "server": "cd backend && node server.js",
     "frontend": "cd frontend && npm start",
