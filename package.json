@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "cd backend && npm start",
+    "server": "cd backend && node server.js",
     "frontend": "cd frontend && npm start",
-    "start": "concurrently \"npm run server\" \"npm run start frontend\""
+    "start": "concurrently \"npm run server\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
